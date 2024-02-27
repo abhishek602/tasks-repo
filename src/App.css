@@ -1,38 +1,252 @@
-.App {
+/* -------------------------------------------------------------------------- */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+body {
+  background: linear-gradient(
+      rgba(248, 244, 244, 0.7),
+      rgba(191, 212, 232, 0.7)
+    ),
+    url("https://plus.unsplash.com/premium_photo-1667627684620-b044407f968e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  padding: 20px;
+}
+
+.customContainer {
+  margin: 10px auto !important;
+  width: 80% !important;
+  padding: 1%;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #1976d2;
+  overflow: hidden;
+  padding-bottom: 3%;
+}
+
+.input {
+  display: block;
+  width: 100%;
+}
+
+.img {
+  width: 90%;
+  height: auto;
+  align-self: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navItem {
+  color: #fff;
+  list-style: none;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block; /* Adjust for better mobile navigation */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* todo */
+.maintodoContainer {
+  text-align: left;
+  padding: 0 2%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todoHeading {
+  color: rgb(137, 135, 135);
+}
+
+.inputContainer {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 60%;
+  margin: 30px 0;
+  padding: 2%;
+  border: 1px solid #898d91;
+  box-shadow: 2px 2px 4px #a2a4a5;
 }
 
-.App-link {
-  color: #61dafb;
+.btngrp {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.tableheadrow {
+  margin-left: 0 !important;
+  margin-top: 20px !important;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid #a2a4a5;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: gray;
+  padding-bottom: 1%;
+  box-shadow: 2px 2px 4px #a2a4a5;
+  width: 95% !important;
+}
+
+.tablerow {
+  margin-left: 0 !important;
+  margin-top: 20px !important;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid #a2a4a5;
+  font-size: 1.2rem;
+  padding-bottom: 1%;
+  text-align: center;
+  width: 95% !important;
+}
+
+.dashContainer {
+  margin: 0 auto;
+  width: 90% !important; /* Adjust width for smaller screens */
+}
+
+/* Responsive adjustments */
+@media (max-width: 968px) {
+  .customContainer,
+  .dashContainer {
+    width: 95%;
+    text-align: left;
+    padding-right: 4%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navItem {
+    margin: 0 10px; /* Reduce margin for smaller screens */
+  }
+
+  .inputContainer {
+    display: flex;
+    flex-direction: column; /*Stack input and button vertically on smaller screens */
+    justify-content: space-between;
+    align-items: center;
+    height: 160px;
+    width: 100%;
+    margin: 15px 0;
+    padding: 2%;
+    border: 1px solid #898d91;
+    box-shadow: 2px 2px 4px #a2a4a5;
+  }
+
+  .btngrp {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    justify-content: space-between; /* Center align buttons for smaller screens */
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  .tableheadrow {
+    margin-left: 0 !important;
+    margin-top: 30px !important;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100% !important;
+  }
+
+  .tablerow {
+    margin-left: 0 !important;
+    margin-top: 15px !important;
+    align-items: center;
+    height: 160px;
+    justify-content: flex-start;
+    border: 1px solid #a2a4a5;
+    font-size: 1.1rem;
+    padding-bottom: 1%;
+    width: 100% !important; /* Ensure full width on smaller screens */
+    box-shadow: 2px 2px 4px #a2a4a5;
+  }
+
+  .inputField {
+    width: 90%;
+  }
+
+  .acionbtncontainer {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .actionbtn {
+    margin-top: 10% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .customContainer,
+  .dashContainer {
+    width: 100%;
+    text-align: left;
+    padding-right: 5%;
+  }
+
+  .inputContainer {
+    flex-direction: column;
+  }
+
+  .navItem {
+    margin: 0 5px;
+  }
+
+  .btngrp {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    /* flex-direction: column; */
+    /* justify-content: center;  */
+    /* align-items: center; */
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .btnAllAct {
+    margin-top: 10px !important;
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+
+  .tableheadrow {
+    margin-left: 0 !important;
+    margin-top: 30px !important;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100% !important;
+  }
+
+  .tablerow {
+    margin-left: 0 !important;
+    margin-top: 15px !important;
+    align-items: center;
+    height: 12% !important;
+    justify-content: flex-start;
+    border: 1px solid #a2a4a5;
+    font-size: 1.1rem;
+    padding-bottom: 1%;
+    width: 100% !important; /* Ensure full width on smaller screens */
+    box-shadow: 2px 2px 4px #a2a4a5;
+  }
+
+  .inputField {
+    width: 90%;
+  }
+
+  .acionbtncontainer {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .actionbtn {
+    margin-top: 10% !important;
   }
 }
